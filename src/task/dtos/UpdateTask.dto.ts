@@ -9,8 +9,8 @@ export class UpdateTaskDto {
     description?: string
 
     @IsDateString()
-    expirationTime?: Date
-    
+    expiration_time?: string;
+
     @IsEnum(TaskStatusEnum)
     status?: TaskStatusEnum
 }

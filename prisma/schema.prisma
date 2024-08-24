@@ -18,7 +18,7 @@ model Task {
   title String @db.VarChar(256) 
   description String? @db.VarChar(512)
   status String @db.VarChar(50) @default("TO_DO")
-  expiration_time DateTime
+  expiration_time DateTime @db.Timestamptz()
 
   @@map("task")
 }

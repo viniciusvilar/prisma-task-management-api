@@ -6,7 +6,7 @@ export class CreateTaskDto {
 
     @IsString()
     description: string
-    
+
     @IsDateString()
-    expirationTime: Date
+    expiration_time: Date
 }
