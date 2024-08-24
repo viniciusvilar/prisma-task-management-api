@@ -25,4 +25,20 @@ export class TaskService {
         }
     }
 
+    async list(): Promise<Task[]> {
+        try {
+            const tasks = await this.prismaService.task.findMany()
+            return tasks
+    
+        } catch (error) {
+            throw new HttpException(
+                {
+                  message: 'An error occurred while creating the task.',
+                  details: error.message,
+                },
+                HttpStatus.BAD_REQUEST,
+            );
+        }
+    }
+
 }

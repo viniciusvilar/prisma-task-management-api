@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { TaskService } from './task.service';
 import { CreateTaskDto } from './dtos/CreateTask.dto';
 import { Task } from '@prisma/client';
@@ -13,4 +13,8 @@ export class TaskController {
         return await this.taskService.create(task)
     }
 
+    @Get()
+    async list(): Promise<Task[]> {
+        return await this.taskService.list()
+    }
 }

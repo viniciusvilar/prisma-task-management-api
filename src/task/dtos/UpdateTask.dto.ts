@@ -1,4 +1,4 @@
-import { IsDateString, IsEnum, IsString } from "class-validator"
+import { IsEnum, IsString } from "class-validator"
 import { TaskStatusEnum } from "../enum/TaskStatusEnum"
 
 export class UpdateTaskDto {
@@ -7,9 +7,6 @@ export class UpdateTaskDto {
 
     @IsString()
     description?: string
-
-    @IsDateString()
-    expiration_time?: string;
 
     @IsEnum(TaskStatusEnum)
     status?: TaskStatusEnum

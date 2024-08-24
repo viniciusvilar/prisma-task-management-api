@@ -1,4 +1,4 @@
-import { IsDateString, IsString } from "class-validator"
+import { IsString } from "class-validator"
 
 export class CreateTaskDto {
     @IsString()
@@ -6,7 +6,4 @@ export class CreateTaskDto {
 
     @IsString()
     description: string
-
-    @IsDateString()
-    expiration_time: Date
 }
